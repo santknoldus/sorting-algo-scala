@@ -21,20 +21,3 @@ case class BubbleSort() {
     }
 }
 
-case class InsertionSort() {
-  def insertElement(element: Int, sorted: List[Int]): List[Int] =
-    sorted match {
-      case Nil => element :: sorted
-      case head :: tail if head < element => head :: insertElement(element, tail)
-      case _ => element :: sorted
-    }
-
-  def insertionSort(list: List[Int]): List[Int] =
-    list match {
-      case Nil => list
-      case head :: tail =>
-        val sorted = insertionSort(tail)
-        insertElement(head, sorted)
-    }
-}
-
